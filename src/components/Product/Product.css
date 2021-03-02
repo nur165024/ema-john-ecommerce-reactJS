@@ -1,0 +1,15 @@
+.product{
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+.productContent{
+    padding: 20px;
+}
+.addtoCartBtn{
+    background-color: goldenrod;
+    width: 150px;
+    height: 30px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
