@@ -1,4 +1,6 @@
-import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Cart = (props) => {
     const cart = props.cart;
@@ -8,6 +10,7 @@ const Cart = (props) => {
         let productPrice = cart[i];
         totalPrice = totalPrice + productPrice.price;
     }
+
     let shippingCost = 0;
     if(totalPrice > 35){
         shippingCost = 0;
@@ -23,6 +26,10 @@ const Cart = (props) => {
             <p>Items Ordered : {cart.length}</p>
             <p><small>Shipping Cost : {shippingCost}</small></p>
             <p>Total Price : $ {(totalPrice + shippingCost).toFixed(2)}</p>
+            <br/>
+            {
+                props.children
+            }
         </div>
     );
 };

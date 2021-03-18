@@ -1,0 +1,8 @@
+.cartlist{
+    width: 100%;
+    display: flex;
+    float: left;
+}
+#cartreview{
+    width: 70%;
+}

@@ -1,16 +1,10 @@
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
+import OrderView from './components/OrderView/OrderView';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import Shop from './components/Shop/Shop';
 
-function OrderView(){
-  return (
-    <div>
-      <h2>this is order review</h2>
-    </div>
-  )
-}
 function Inventory(){
   return (
     <div>

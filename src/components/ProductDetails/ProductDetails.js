@@ -9,7 +9,7 @@ const ProductDetails = () => {
     console.log(product);
     return (
         <div>
-            <Product product={product}></Product>
+            <Product showAddToCart={false} product={product}></Product>
         </div>
     );
 };
