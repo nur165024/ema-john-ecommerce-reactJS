@@ -57,7 +57,7 @@ const OrderView = () => {
                 <Cart cart={cart}>
                     <button onClick={placeOrder} className="addtoCartBtn">
                         <FontAwesomeIcon icon={faSignInAlt}></FontAwesomeIcon> 
-                        Place Order
+                        Checkout
                     </button>
                 </Cart>
             </div>
