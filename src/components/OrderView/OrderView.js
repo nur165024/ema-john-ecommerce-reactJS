@@ -7,10 +7,13 @@ import './OrderView,.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import happyImage from '../../images/giphy.gif'
+import { useHistory } from 'react-router';
 
 const OrderView = () => {
     const [cart,setCart] = useState([]);
     const [orderPlace,setPlaceOrder] = useState(false);
+    const history = useHistory();
+
     useEffect(() =>{
         const getCart = getDatabaseCart();
         const productkey = Object.keys(getCart);
@@ -28,10 +31,8 @@ const OrderView = () => {
         removeFromDatabaseCart(proudctkey);
     }
     
-    const placeOrder = () => {
-        setCart([]);
-        setPlaceOrder(true);
-        processOrder(); 
+    const checkoutPage = () => {
+        history.push('/checkout');
     }
     
     
@@ -55,7 +56,7 @@ const OrderView = () => {
             </div>
             <div>
                 <Cart cart={cart}>
-                    <button onClick={placeOrder} className="addtoCartBtn">
+                    <button onClick={checkoutPage} className="addtoCartBtn">
                         <FontAwesomeIcon icon={faSignInAlt}></FontAwesomeIcon> 
                         Checkout
                     </button>

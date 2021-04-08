@@ -2,25 +2,14 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
 import Checkout from './components/Checkout/Checkout';
 import Header from './components/Header/Header';
+import Login from './components/Login/Login';
 import OrderView from './components/OrderView/OrderView';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import Shop from './components/Shop/Shop';
+import Other from './components/Other/Other';
+import Inventory from './components/Inventory/Inventory';
 
-function Inventory(){
-  return (
-    <div>
-      <h2>this is manage inventory</h2>
-    </div>
-  )
-}
-function Other(){
-  return (
-    <div>
-      <h2>this is 404 page</h2>
-    </div>
-  )
-}
 
 function App() {
   return (
@@ -29,26 +18,28 @@ function App() {
           <Header></Header>
           <Switch>
              <Route exact path="/">
-                <Shop></Shop>
+                  <Shop></Shop>
              </Route>
              <Route path="/order-review">
-                <OrderView></OrderView>
+                  <OrderView></OrderView>
              </Route>
              <Route path="/manage-inventory">
-                <Inventory></Inventory>
+                  <Inventory></Inventory>    
              </Route>
              <Route path="/product/:productkey">
-                <ProductDetails></ProductDetails>
+                  <ProductDetails></ProductDetails>
              </Route>
-             <PrivateRoute path='/checkout'>
-                <Checkout></Checkout>
-             </PrivateRoute>
+             <Route path='/checkout'>
+                  <Checkout></Checkout>
+             </Route>
+             <Route path='/login'>
+                  <Login></Login>
+             </Route>
              <Route path="*">
-                <Other></Other>
+                  <Other></Other>
              </Route>
           </Switch>
         </Router>
-        
     </div>
   );
 }
