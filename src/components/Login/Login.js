@@ -26,7 +26,7 @@ function Login() {
   const history = useHistory();
   const location = useLocation();
   
-  let { from } = location.state || { from: { pathname: "/" } };
+  const { from } = location.state || { from: { pathname: "/" } };
 
   const inputFild = (e) => {
     const userInfo = {...user};
